@@ -20,11 +20,8 @@ td {
 	left:	7px;
 	width:	1050px;
 	height:	690px;
-  overflow: hidden;
-	-moz-border-radius-topleft: 16px;
-	-moz-border-radius-topright: 16px;
-	-moz-border-radius-bottomleft: 16px;
-	-moz-border-radius-bottomright: 16px;
+	overflow: hidden;
+	border-radius: 10px;
 }
 .week_block {
 		font-family:Verdana,Tahoma;
@@ -32,10 +29,8 @@ td {
 	  width: 330px;
 	margin: 10px;
 	text-align:center;
-	-moz-border-radius-topleft: 16px;
-	-moz-border-radius-topright: 16px;
-	-moz-border-radius-bottomleft: 16px;
-	-moz-border-radius-bottomright: 16px;
+	border-radius: 10px;
+
 }
 #week_main{
 	position:absolute;
@@ -55,10 +50,7 @@ td {
 	left:	1067px;
 	width:	300px;
 	height:	690px;
-	-moz-border-radius-topleft: 16px;
-	-moz-border-radius-topright: 16px;
-	-moz-border-radius-bottomleft: 16px;
-	-moz-border-radius-bottomright: 16px;
+	border-radius: 10px;
 }
 .day_block {
   font-family:Verdana,Tahoma;
@@ -67,10 +59,7 @@ td {
 	margin: 10px;
 	padding: 10px;
 	text-align: center;
-	-moz-border-radius-topleft: 16px;
-	-moz-border-radius-topright: 16px;
-	-moz-border-radius-bottomleft: 16px;
-	-moz-border-radius-bottomright: 16px;
+	border-radius: 10px;
 }
 
 
@@ -78,13 +67,10 @@ td {
 	background:-moz-linear-gradient(bottom , #4aff5f , #ffffff);
 	  font-family:Verdana,Tahoma;
 	position:absolute;
-  padding: 10px;
+	padding: 10px;
 	top:	705px;
 	left:	7px;
 	width:	1290px;
 	height:	40px;
-	-moz-border-radius-topleft: 16px;
-	-moz-border-radius-topright: 16px;
-	-moz-border-radius-bottomleft: 16px;
-	-moz-border-radius-bottomright: 16px;
+	border-radius: 10px;
 }
