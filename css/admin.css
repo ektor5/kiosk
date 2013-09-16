@@ -1,0 +1,185 @@
+body {
+	background: #eeeeee;
+	font-family:Verdana,Tahoma,Arial,Sans-Serif;
+	font-size:10px;
+	margin: 10px;
+}
+
+td {
+	font-family: Verdana,Tahoma,Arial,Sans-Serif;
+	font-size: 10px;
+}
+
+a {
+	font-family: Verdana,Tahoma,Arial,Sans-Serif;
+	font-size: 10px;
+        font-weight: bold;
+        color: #666666;
+        text-decoration: none;
+}
+a:hover {
+	font-family: Verdana,Tahoma,Arial,Sans-Serif;
+	font-size: 10px;
+        font-weight: bold;
+        color: #ff0000;
+        text-decoration: none;
+}
+
+.logo {
+  height: 90px;
+  text-align: center;
+  font-weight: bold; 
+}
+.login {
+  position: relative;
+  background: #eeeeee;
+  top: 100px;
+  width: 300px;
+  height: 100px;
+  text-align: center;
+  border-left: 1px solid #aaaaaa;
+  border-top: 1px solid #aaaaaa;
+  border-right: 2px solid #666666;
+  border-bottom: 2px solid #666666;
+  margin-left: auto ;
+  margin-right: auto ;
+  padding: 10px;
+}
+.actions { 
+		border: none;
+   margin-left: 2px;  
+   margin-right: 2px; 
+}
+.powered { 
+		border: none;
+   margin-bottom: -1px;  
+   margin-right: -1px; 
+}
+/* header di pagina */
+.page_head {
+  font-family:Verdana,Tahoma,Arial,Sans-Serif; 
+  font-size: 18px; 
+  background: #8090e0;
+  color: #ffffff; 
+  height: 30px; 
+  font-weight: bold; 
+  text-align: center; 
+/*  vertical-align: middle; */
+}
+
+/* header nella tabella dati */
+.tbl_head {
+  font-family:Verdana,Tahoma,Arial,Sans-Serif; 
+  font-size: 11px; 
+  height: 20px;
+  background: #999999;
+  color: #ffffff; 
+  font-weight: bold;
+}
+.tbl_head td {
+	border: 1px solid gray;
+}
+
+.tablelist {
+	border-collapse: collapse;
+/*	border-style:solid;
+	cellpadding:"1px";
+	cellspacing:"2px";
+*/	
+}
+
+.tbl_days {
+  border-collapse: collapse;
+  border-left: 2px solid gray;
+  border-right: 2px solid gray;
+}
+
+/* righe pari nelle tabelle dati */
+.tbl_0 {
+  font-family:Verdana,Tahoma,Arial,Sans-Serif; 
+  font-size:10; 
+  background: #dddddd;
+  color: #000000; 
+ 
+}
+.tbl_0 td {
+	border: 1px solid silver;
+}
+/* righe dispari nelle tabelle dati */
+.tbl_1 {
+  font-family:Verdana,Tahoma,Arial,Sans-Serif; 
+  font-size:10; 
+  background: #ffffff;
+  color: #000000; 
+ 
+}
+.tbl_1 td {
+	border: 1px solid silver;
+}
+
+.tbl_form {
+  font-family:Verdana,Tahoma,Arial,Sans-Serif; 
+  font-size: 11px; 
+  background: #999999;
+  color: #ffffff; 
+  font-weight: bold;
+  vertical-align: middle;
+  text-align: right;
+}
+
+/* table menu storico */
+.tbl_menu {
+  background: #e0e0e0;
+  color: #ffffff; 
+  font-weight: bold;
+}
+
+/* messaggi */
+.msg {
+  font-family:Verdana,Tahoma,Arial,Sans-Serif; 
+  font-size: 14px; 
+  background: #ffffff;
+  color: #000000; 
+}
+
+.border {
+  	background: #000000;
+  	width: 1px;
+}
+
+.tbl_detail {
+  font-family:Verdana,Tahoma,Arial,Sans-Serif; 
+  font-size: 14px; 
+  background: #ffffff;
+  color: #000000; 
+/*  font-weight: bold;*/
+  border-collapse: collapse;
+  border: 1px solid black;
+  padding: 10px;
+  
+}
+
+.td_detail {
+  font-family:Verdana,Tahoma,Arial,Sans-Serif; 
+  font-size: 12px; 
+  background: #ffffff;
+  color: #000000; 
+  border-collapse: collapse;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.td_hdetail {
+  font-family: Verdana,Tahoma,Arial,Sans-Serif; 
+  font-size: 12px; 
+  background: #aaaaaa;
+  color: #ffffff; 
+  font-weight: bold;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.header {
+	text-align: left;
+}
+  
