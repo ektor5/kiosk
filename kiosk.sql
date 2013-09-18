@@ -1,42 +1,93 @@
+  CREATE TABLE aule (
+   aule_id INTEGER AUTO_INCREMENT,
+   aule_nome CHAR(32) NOT NULL,
+   PRIMARY KEY(aule_id)
+   );
+   
+  INSERT INTO aule (aule_nome) VALUES("Aula 102");
+  INSERT INTO aule (aule_nome) VALUES("Aula 111");
+  INSERT INTO aule (aule_nome) VALUES("Aula 112");
+  INSERT INTO aule (aule_nome) VALUES("Aula 113");
+  INSERT INTO aule (aule_nome) VALUES("Aula 114");
+  INSERT INTO aule (aule_nome) VALUES("Aula 115");
+  INSERT INTO aule (aule_nome) VALUES("Aula 116");
+  INSERT INTO aule (aule_nome) VALUES("Aula 117");
+  INSERT INTO aule (aule_nome) VALUES("Aula 118");
+  INSERT INTO aule (aule_nome) VALUES("Aula 119");
+  INSERT INTO aule (aule_nome) VALUES("Aula 120");
+  INSERT INTO aule (aule_nome) VALUES("Aula 211");
+  INSERT INTO aule (aule_nome) VALUES("Aula 212");
+INSERT INTO aule (aule_nome) VALUES("Aula 213");
+INSERT INTO aule (aule_nome) VALUES("Aula 214");
+INSERT INTO aule (aule_nome) VALUES("Aula 215");
+INSERT INTO aule (aule_nome) VALUES("Aula 216");
+INSERT INTO aule (aule_nome) VALUES("Aula 217");
+INSERT INTO aule (aule_nome) VALUES("Aula 218");
+INSERT INTO aule (aule_nome) VALUES("Aula 219");
+INSERT INTO aule (aule_nome) VALUES("Aula 220");
+INSERT INTO aule (aule_nome) VALUES("Aula 311");
+INSERT INTO aule (aule_nome) VALUES("Aula 312");
+INSERT INTO aule (aule_nome) VALUES("Aula 313");
+INSERT INTO aule (aule_nome) VALUES("Aula 314");
+INSERT INTO aule (aule_nome) VALUES("Aula 315");
+INSERT INTO aule (aule_nome) VALUES("Aula 316");
+INSERT INTO aule (aule_nome) VALUES("Aula 317");
+INSERT INTO aule (aule_nome) VALUES("Aula 318");
+INSERT INTO aule (aule_nome) VALUES("Aula 319");
+INSERT INTO aule (aule_nome) VALUES("Aula 320");
+INSERT INTO aule (aule_nome) VALUES("Aula 411");
+INSERT INTO aule (aule_nome) VALUES("Aula 412");
+INSERT INTO aule (aule_nome) VALUES("Aula 413");
+INSERT INTO aule (aule_nome) VALUES("Aula 414");
+INSERT INTO aule (aule_nome) VALUES("Aula 415");
+INSERT INTO aule (aule_nome) VALUES("Aula 416");
+INSERT INTO aule (aule_nome) VALUES("Aula 417");
+INSERT INTO aule (aule_nome) VALUES("Aula 418");
+INSERT INTO aule (aule_nome) VALUES("Aula 419");
+INSERT INTO aule (aule_nome) VALUES("Aula 420");
+
   CREATE TABLE docenti (
   doc_id INTEGER AUTO_INCREMENT,
   doc_nome VARCHAR(20) NOT NULL,
+  doc_aula INTEGER
+    REFERENCES aule(aule_id)
+    ON DELETE SET NULL ON UPDATE CASCADE,
   PRIMARY KEY(doc_id)
   );
 
-   INSERT INTO docenti (doc_nome) VALUES ("Baldi E.");
-   INSERT INTO docenti (doc_nome) VALUES ("Baldini G.");
-   INSERT INTO docenti (doc_nome) VALUES ("Bastianini A.");
-   INSERT INTO docenti (doc_nome) VALUES ("Bastoni S.");
-   INSERT INTO docenti (doc_nome) VALUES ("Bellanova M.");
-   INSERT INTO docenti (doc_nome) VALUES ("Bellesi S.");
-   INSERT INTO docenti (doc_nome) VALUES ("Bianchi G.");
-   INSERT INTO docenti (doc_nome) VALUES ("Bigi B.");
-   INSERT INTO docenti (doc_nome) VALUES ("Bondi A.");
-   INSERT INTO docenti (doc_nome) VALUES ("Calusi L.");
-   INSERT INTO docenti (doc_nome) VALUES ("Camardo G.");
-   INSERT INTO docenti (doc_nome) VALUES ("Cannavo' G.L.");
-   INSERT INTO docenti (doc_nome) VALUES ("Cantara V.");
-   INSERT INTO docenti (doc_nome) VALUES ("Capotondi S.");
-   INSERT INTO docenti (doc_nome) VALUES ("Cavarra C.");
-   INSERT INTO docenti (doc_nome) VALUES ("Cecconi L.");
-   INSERT INTO docenti (doc_nome) VALUES ("Cervelli A.");
-   INSERT INTO docenti (doc_nome) VALUES ("Chemello G.");
-   INSERT INTO docenti (doc_nome) VALUES ("Chiti G.");
-   INSERT INTO docenti (doc_nome) VALUES ("Cini F. B.");
-   INSERT INTO docenti (doc_nome) VALUES ("Consumi C.");
-   INSERT INTO docenti (doc_nome) VALUES ("Conti C.");
-   INSERT INTO docenti (doc_nome) VALUES ("Corti C.");
-   INSERT INTO docenti (doc_nome) VALUES ("Cuozzo P.");
-   INSERT INTO docenti (doc_nome) VALUES ("Dell&#39;Amico M.");
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Baldi E.",2);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Baldini G.",4);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Bastianini A.",32);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Bastoni S.",12);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Bellanova M.",4);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Bellesi S.",1);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Bianchi G.",8);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Bigi B.",9);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Bondi A.",15);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Calusi L.",16);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Camardo G.",24);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Cannavo' G.L.",2);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Cantara V.",5);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Capotondi S.",21);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Cavarra C.",31);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Cecconi L.",2);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Cervelli A.",12);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Chemello G.",19);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Chiti G.",18);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Cini F. B.",25);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Consumi C.",27);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Conti C.",20);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Corti C.",10);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Cuozzo P.",5);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Dell&#39;Amico M.",7);
    INSERT INTO docenti (doc_nome) VALUES ("Dell&#39;Anno A. M.");
    INSERT INTO docenti (doc_nome) VALUES ("Donzelli R.");
-   INSERT INTO docenti (doc_nome) VALUES ("Fallai F.");
-   INSERT INTO docenti (doc_nome) VALUES ("Fazzini P.");
-   INSERT INTO docenti (doc_nome) VALUES ("Galardi A.");
-   INSERT INTO docenti (doc_nome) VALUES ("Garosi A.");
-   INSERT INTO docenti (doc_nome) VALUES ("Gerunda M.");
-   INSERT INTO docenti (doc_nome) VALUES ("Gialanella G.");
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Fallai F.",26);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Fazzini P.",14);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Galardi A.",17);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Garosi A.",11);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Gerunda M.",23);
+   INSERT INTO docenti (doc_nome, doc_aula) VALUES ("Gialanella G.",30);
    INSERT INTO docenti (doc_nome) VALUES ("Grosso T.");
    INSERT INTO docenti (doc_nome) VALUES ("Guzzo A.");
    INSERT INTO docenti (doc_nome) VALUES ("Intranuovo T.");
@@ -191,5 +242,4 @@
   cnf_tmrss INTEGER,
   cnf_collate INTEGER
   );  
-  INSERT INTO conf 
-VALUES("447b20a7fcbf53a5d5be013ea0b15af",600,1,5000,10000,15000,15000,0);
+  INSERT INTO conf VALUES("447b20a7fcbf53a5d5be013ea0b15af",600,1,5000,10000,15000,15000,0);

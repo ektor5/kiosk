@@ -24,9 +24,9 @@ td {
 	border-radius: 10px;
 }
 .week_block {
-		font-family:Verdana,Tahoma;
+	font-family:Verdana,Tahoma;
 	background:#ffffff;
-	  width: 330px;
+	width: 330px;
 	margin: 10px;
 	text-align:center;
 	border-radius: 10px;
@@ -70,7 +70,7 @@ td {
 	padding: 10px;
 	top:	705px;
 	left:	7px;
-	width:	1290px;
+	width:	1340px;
 	height:	40px;
 	border-radius: 10px;
 }

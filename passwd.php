@@ -62,7 +62,7 @@ if(isset($_GET['cmd']))
   switch($_GET['cmd'])
   {
     case '2':  // modifica                         
-      $result = dbquery('UPDATE conf SET cnf_pass = md5("'.isText($_GET['passwd']).'")');
+      $result = dbquery('UPDATE conf SET cnf_pass = md5("'.isText($_GET['user_pass']).'")');
       if($result && dbrows($result,"update"))
         message('Dati modificati con successo');
       else

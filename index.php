@@ -16,8 +16,8 @@
 date_default_timezone_set("UTC");
 
   function getGiornalieroA($day) {
-    $sql = 'SELECT ore_inizio, ore_fine, doc_nome, ora_note ';
-    $sql .= 'FROM ore, orario, docenti ';
+    $sql = 'SELECT ore_inizio, ore_fine, doc_nome, ora_note, aule_nome ';
+    $sql .= 'FROM ore, orario, docenti LEFT JOIN aule ON doc_aula = aule_id ';
     $sql .= 'WHERE ora_docente = doc_id AND ora_ora = ore_id ';
     $sql .= 'AND ora_giorno = '. $day;
     $result = 	dbquery($sql);
@@ -26,17 +26,19 @@ date_default_timezone_set("UTC");
     $start 	= 	"";
     $end 	= 	""; 
     $note 	= 	"";
+    $aula	=	"";
     while ($data = dbarray($result))
     {
       $name = $data['doc_nome'];
       $note = $data['ora_note'];
+      $aula = $data['aule_nome'];
 
       if($data['ore_inizio'] != $start) 
         if($start != "") { 
            $var[] = array("start"=>$start,"end"=>$end,"docs"=>$names);
            $names = array(); 
         }
-      $names[$name] = $note;
+      $names[$name] = array("note"=>$note,"aula"=>$aula);
       $start =  $data['ore_inizio'];
       $end =  $data['ore_fine'];      
       /*if($names != "")
@@ -55,9 +57,9 @@ date_default_timezone_set("UTC");
       $var .= 'giornaliero['.$index.'] = ';
       $var .= 'new Array("'.$hour['start'].'","'.$hour['end'].'",';
       $var .= '"<br><table>';
-      foreach($hour['docs'] as $docente => $nota){  
+      foreach($hour['docs'] as $docente => $dati){  
       	$var .= '<tr><td width=\'50%\' style=text-align:left;>'.$docente.'</td>';
-      	$var .= '<td width=\'50%\' style=text-align:right;>'.$nota.'</td></tr>';
+      	$var .= '<td width=\'50%\' style=text-align:right;>'.$dati['note'].'</td></tr>';
       }
   		$var .= '</table>");'."\n";
       $index++;
@@ -81,9 +83,9 @@ date_default_timezone_set("UTC");
         $week .= '<div class="week_block"><table width="100%">';
         $week .= '<tr><td colspan="3">';
         $week .= '<b>'.$hour['start'].' - '.$hour['end'].'</b></td></tr>';
-        foreach($hour['docs'] as $docente => $nota){
+        foreach($hour['docs'] as $docente => $dati){
         	$week .= '<tr><td width="50%" style="text-align:left;">'.$docente.'</td>';
-         $week .= '<td width="50%" style="text-align:right;"><i>'.$nota.'</i></td></tr>';
+		$week .= '<td width="50%" style="text-align:right;"><i>'.$dati['aula'].'</i></td></tr>';
      	  }
      	 $week .= '</table></div>';
       }
@@ -137,9 +139,11 @@ date_default_timezone_set("UTC");
   <link rel="stylesheet" href="css/kiosk.css" type="text/css" />
   <script type="text/javascript" src="js/coolclock.js"></script>
   <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.corners.js"></script>
   <script type="text/javascript" src="js/update.js"></script>
   <script type = "text/javascript" >
 
+  
 <?php echo getGiornaliero(date("w")-1); ?>
 
 <?php //echo getRss();
@@ -166,7 +170,7 @@ date_default_timezone_set("UTC");
 			<tr><td class="day_title"></td></tr>  
 			<tr><td><i>RICEVONO:<i></td></tr> 
 			<tr><td><div id="d1" style="display: none;"></div></td></tr>
- 		    <tr><td class="day_title"></td></tr> 
+		        <tr><td class="day_title"></td></tr> 
 			<tr><td><div id="d2" style="display: none;"></div></td></tr>
 	 </table>
 	</div>
