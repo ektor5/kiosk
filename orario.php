@@ -21,7 +21,7 @@ define("JAVASCRIPT","jquery.js");
 define("JSCODE","
 function check_doc(f)
 {
-  if(f.nome.value == '' && f.nome.disable == 'off')
+  if(f.nome.value == '')
   {
     alert('Nome mancante');
     f.nome.focus();
@@ -35,16 +35,16 @@ function dcheck(url)
     document.location = url;
 }
 function grey(){
-  var value = $('#delete').attr('value');
-  if (value == 'on'){
-    $('#textbox').attr('disable','on');
-    $('#textbox').attr('readonly','on');
-    $('#textbox').attr('background-color','grey');
-
+  var value = $('#delete').attr('checked');
+  if (value){
+    $('#textbox').attr('disable',true);
+    $('#textbox').attr('readonly',true);
+    $('#textbox').attr('value','');
+    $('#textbox').css('background-color','lightgrey');
   }else{
-    $('#textbox').attr('disable','off');    
-    $('#textbox').attr('readonly','off');    
-    $('#textbox').style('background-color','white');
+    $('#textbox').attr('disable',false);    
+    $('#textbox').attr('readonly',false);    
+    $('#textbox').css('background-color','white');
   }
 }
 ");
