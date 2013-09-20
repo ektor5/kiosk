@@ -1,20 +1,21 @@
 body {
-  background: #888888;
+	background: #888888;
 }
 
 td {
-  text-align: center;
+	text-align: center;
 }
 
 .week_title {
-  color: #000000;
-  font-family:Verdana,Tahoma;
-  width: 10px;
-  text-align: center;
-  font-weight:bold; 
+	color: #000000;
+	font-family:Verdana,Tahoma;
+	width: 10px;
+	text-align: center;
+	font-weight:bold; 
 }
 #week {
 	background: -moz-linear-gradient(top , #45c8ff , #ffffff);
+	background: -webkit-linear-gradient(top , #45c8ff , #ffffff);
 	position:absolute;
 	top:	5px;
 	left:	7px;
@@ -34,17 +35,18 @@ td {
 }
 #week_main{
 	position:absolute;
-  left: 0px;
+	left: 0px;
 }
 
 .day_title {
-  color: #000000;
-  width: 10px;
-  text-align: center;
-  font-weight:bold; 
+	color: #000000;
+	width: 10px;
+	text-align: center;
+	font-weight:bold; 
 }
 #day {
 	background:-moz-linear-gradient(top , yellow , white);
+	background:-webkit-linear-gradient(top , yellow , white);
 	position:absolute;
 	top:	5px;
 	left:	1067px;
@@ -53,8 +55,8 @@ td {
 	border-radius: 10px;
 }
 .day_block {
-  font-family:Verdana,Tahoma;
-  display: block;
+	font-family:Verdana,Tahoma;
+	display: block;
 	background:#ffffff;
 	margin: 10px;
 	padding: 10px;
@@ -65,7 +67,8 @@ td {
 
 #news {
 	background:-moz-linear-gradient(bottom , #4aff5f , #ffffff);
-	  font-family:Verdana,Tahoma;
+	background:-webkit-linear-gradient(bottom , #4aff5f , #ffffff);
+	font-family:Verdana,Tahoma;
 	position:absolute;
 	padding: 10px;
 	top:	705px;
