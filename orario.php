@@ -21,13 +21,13 @@ define("JAVASCRIPT","jquery.js");
 define("JSCODE","
 function check_doc(f)
 {
-  if(f.nome.value == '')
+  if(f.nome.value == '' && !$('#textbox').attr('disable'))
   {
     alert('Nome mancante');
     f.nome.focus();
     return false;
   }
-  return true;
+ return true;
 }
 function dcheck(url)
 {
@@ -91,7 +91,7 @@ function selectAula($sel)
   $result = dbquery("SELECT * FROM aule");
   echo '<select name="aula">';
   if ($sel == -1) // aggiungi nuova aula
-    echo '<option>Aggiungi aula</option>';
+    echo '<option value="0">Aggiungi aula</option>';
   else
     echo '<option></option>';
   while	($aula = dbarray($result)) 
@@ -306,7 +306,7 @@ if(isset($_GET['cmd']))
       if($_GET['id'])
       {
 	$sql = 'UPDATE docenti SET doc_nome = "'.isText($_GET['nome']).'" ';
-	$sql .='		 , doc_aula = "'.$aula.'" ';
+	$sql .='		 , doc_aula = '.$aula.' ';
 	$sql .=' 	       WHERE doc_id ='.isNum($_GET['id']);
         $result = dbquery($sql);
         if($result && dbrows($result,"update"))
@@ -314,7 +314,7 @@ if(isset($_GET['cmd']))
       }
       else
       {
-        $result = dbquery('INSERT INTO docenti VALUES ( DEFAULT, "'.isText($_GET['nome']).'", "'.$aula.'")');
+        $result = dbquery('INSERT INTO docenti VALUES ( DEFAULT, "'.isText($_GET['nome']).'", '.$aula.')');
         if($result && dbrows($result,"insert"))
           message('Dati aggiunti con successo');
       }
@@ -332,24 +332,29 @@ if(isset($_GET['cmd']))
 	  $sql = 'UPDATE aule SET aule_nome = "'.isText($_GET['nome']).'" ';
 	  $sql .='WHERE aule_id ='.isNum($_GET['aula']);
 	  $result = dbquery($sql);
-	  if($result && dbrows($result,"update"))
+	  if($result && dbrows($result,"update")){
 	    message('Dati modificati con successo');
-        } else {
-	  message('Nome non valido');
-        }
+	    break;
+	  }
+        } 
       }
       elseif($_GET['aula'] && isset($_GET['elimina'])) //elimina aula
       {
 	  $result = dbquery('DELETE FROM aule WHERE aule_id="'.isNum($_GET['aula']).'"');
-	  if($result && dbrows($result,"update"))
+	  if($result && dbrows($result,"update")){
 	    message('Dati eliminati con successo');
+	    break;
+	  }
       }
       elseif(!$_GET['aula'] && !isset($_GET['elimina'])) //aggiungi aula
       {
         $result = dbquery('INSERT INTO aule VALUES ( DEFAULT, "'.isText($_GET['nome']).'")');
-        if($result && dbrows($result,"insert"))
+        if($result && dbrows($result,"insert")){
           message('Dati aggiunti con successo');
-      } 
+          break;
+        }
+      }
+      message('Errore...!');
       break;
   }
 }
