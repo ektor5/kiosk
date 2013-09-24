@@ -9,7 +9,7 @@
 | the included gpl.txt file or visit http://gnu.org
 +----------------------------------------------------*/
   require_once "maincore.php";
-  //require_once "rsslib.php";
+  require_once "rsslib.php";
   //require_once('FirePHPCore/FirePHP.class.php');
 
   //ob_start($output_callback = null, $chunk_size = null, $erase = null);
@@ -95,27 +95,27 @@ date_default_timezone_set("UTC");
     return $week;
   }
   
-  //~ function getRss() {
-    //~ $sql = 'SELECT rss_link FROM rss';
-    //~ $result = dbquery($sql);
-    //~ $var = array();
-    //~ while ($data = dbarray($result))
-      //~ $var[] = $data['rss_link'];
-    //~ $var = RSS_main($var,1);
-    //~ $rss = "var feed = new Array();\n";
-    //~ if ( $var[0] != '' ) {
-    	//~ $index = 0;
-    	//~ foreach($var as $item) {
-    	  //~ $rss .= 'feed['.$index.'] = "<b>'.str_replace('"',"'",$item[0]);
-    	  //~ $rss .= '</b><br>&nbsp;&nbsp;&nbsp;'.str_replace('"',"'",$item[1]).'";'."\n";
-    	  //~ $index++;
-    	//~ }
-    	//~ return $rss;
-    //~ }
-    //~ $rss .= 'feed[0] = "<b>Nessun feed RSS trovato.</b><br>';
-    //~ $rss .= '&nbsp;&nbsp;&nbsp;Controllare la connessione ad internet. "';
-    //~ return $rss;
-  //~ }
+  function getRss() {
+    $sql = 'SELECT rss_link FROM rss';
+    $result = dbquery($sql);
+    $var = array();
+    while ($data = dbarray($result))
+      $var[] = $data['rss_link'];
+    $var = RSS_main($var,1);
+    $rss = "var feed = new Array();\n";
+    if ( $var[0] != '' ) {
+    	$index = 0;
+    	foreach($var as $item) {
+    	  $rss .= 'feed['.$index.'] = "<b>'.str_replace('"',"'",$item[0]);
+    	  $rss .= '</b><br>&nbsp;&nbsp;&nbsp;'.str_replace('"',"'",$item[1]).'";'."\n";
+    	  $index++;
+    	}
+    	return $rss;
+    }
+    $rss .= 'feed[0] = "<b>Nessun feed RSS trovato.</b><br>';
+    $rss .= '&nbsp;&nbsp;&nbsp;Controllare la connessione ad internet. "';
+    return $rss;
+  }
 
  function getConf() {
 	$result = dbquery('SELECT cnf_tmnow,cnf_tmafter,cnf_tmweek,cnf_tmrss FROM conf');
@@ -141,12 +141,12 @@ date_default_timezone_set("UTC");
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/jquery.corners.js"></script>
   <script type="text/javascript" src="js/update.js"></script>
-  <script type = "text/javascript" >
+  <script type="text/javascript" >
 
   
 <?php echo getGiornaliero(date("w")-1); ?>
 
-<?php //echo getRss();
+<?php echo getRss();
  ?>
 
 <?php echo getConf(); ?>

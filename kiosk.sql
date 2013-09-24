@@ -144,9 +144,11 @@ INSERT INTO aule (aule_nome) VALUES("Aula 420");
 
   CREATE TABLE orario (
   ora_id INTEGER AUTO_INCREMENT,
-  ora_docente INTEGER NOT NULL,
+  ora_docente INTEGER NOT NULL
+    REFERENCES docenti(doc_id),
   ora_giorno INTEGER NOT NULL,
-  ora_ora INTEGER NOT NULL,
+  ora_ora INTEGER NOT NULL
+    REFERENCES ore(ore_id),
   ora_note VARCHAR(20) DEFAULT "",
   PRIMARY KEY(ora_id)
   );  
@@ -229,8 +231,8 @@ INSERT INTO aule (aule_nome) VALUES("Aula 420");
   PRIMARY KEY(rss_link)
   );  
 
-  INSERT INTO rss  VALUES ("http://www.ansa.it/web/notizie/rubriche/politica/politica_rss.xml");
-  INSERT INTO rss  VALUES ("http://www.ansa.it/web/notizie/rubriche/spettacolo/spettacolo_rss.xml");
+  INSERT INTO rss  VALUES ("http://ansa.feedsportal.com/c/34225/f/621714/index.rss");
+  INSERT INTO rss  VALUES ("http://ansa.feedsportal.com/c/34225/f/621689/index.rss");
 
   CREATE TABLE conf (
   cnf_pass CHAR(32),

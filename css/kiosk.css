@@ -45,8 +45,8 @@ td {
 	font-weight:bold; 
 }
 #day {
-	background:-moz-linear-gradient(top , yellow , white);
-	background:-webkit-linear-gradient(top , yellow , white);
+	background:-moz-linear-gradient(top , #55e8ff , white);
+	background:-webkit-linear-gradient(top , #55e8ff , white);
 	position:absolute;
 	top:	5px;
 	left:	1067px;

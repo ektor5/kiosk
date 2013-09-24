@@ -149,11 +149,11 @@ function setTimers(tmnow,tmafter,tmweek,tmrss) {
   now = 99;
   week = 0;
   $("#week_main").css({left: -350})
-  //feeds = -1;
+  feeds = -1;
   getOggi();
-  //update_news();
+  update_news();
   setInterval("update_now()",tmnow);
   setInterval("update_after()",tmafter);
   setInterval("update_week()",tmweek);
-  //setInterval("update_news()",tmrss);
+  setInterval("update_news()",tmrss);
 }
