@@ -13,7 +13,7 @@ require_once "maincore.php";
 if (isset($_GET['cmd']) && ! eregi("orario", $_SERVER['HTTP_REFERER']))
   redirect('admin.php');
 
-define("COLOR","#44FF44");
+define("COLOR","#FF3333");
 if(isset($_GET['cmd']) && ($_GET['cmd'] == '2' || $_GET['cmd'] == '4' || $_GET['cmd'] == '6'))
   define("REDIRECT","orario.php");
 
@@ -248,7 +248,7 @@ if(isset($_GET['cmd']))
     case '1':   // modifica orario
       $id = isNum($_GET['id']);
       $sql =  "SELECT doc_id, doc_nome ";
-      $sql .= "FROM orario, docenti";
+      $sql .= "FROM orario, docenti ";
       $sql .= "WHERE doc_id = ora_docente AND ora_id = $id";
       $result = dbquery($sql);
       $data = dbarray($result);
